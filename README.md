@@ -3,6 +3,7 @@ Optimized queue system for HUBs in Minecraft Networks.
 
 This queue system uses a simply linked list to store the data, so it is more efficient when there is a lot of players in the queue, or the queue is modified frequently.
 
+![image](https://github.com/Alejandro12120/kQueue/assets/45500329/c8b65465-100d-4a91-bcad-d00046aa0e18)
 ## Usage
 ### TestQueue
 ```java
