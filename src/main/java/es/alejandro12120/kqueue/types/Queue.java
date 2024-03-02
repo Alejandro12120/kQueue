@@ -2,6 +2,8 @@ package es.alejandro12120.kqueue.types;
 
 import org.bukkit.entity.Player;
 
+import java.util.List;
+
 public class Queue {
 
     private SList list;
@@ -20,6 +22,14 @@ public class Queue {
 
     public Player front() {
         return this.list.getHead().getElement();
+    }
+
+    public int getPosition(Player player) {
+        return this.list.getPosition(player.getName());
+    }
+
+    public List<Player> getPlayers() {
+        return this.list.getPlayers();
     }
 
     public boolean isEmpty() {

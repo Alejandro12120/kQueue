@@ -4,6 +4,8 @@ import es.alejandro12120.kqueue.types.Queue;
 import lombok.Getter;
 import org.bukkit.entity.Player;
 
+import java.util.List;
+
 @Getter
 public class ServerQueue {
 
@@ -27,6 +29,14 @@ public class ServerQueue {
 
     public Player removePlayerFromQueue() {
         return this.queue.dequeue();
+    }
+
+    public int getPosition(Player player) {
+        return this.queue.getPosition(player);
+    }
+
+    public List<Player> getPlayers() {
+        return this.queue.getPlayers();
     }
 
     public Player getFirstPlayer() {

@@ -3,6 +3,9 @@ package es.alejandro12120.kqueue.types;
 import lombok.Getter;
 import org.bukkit.entity.Player;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Getter
 public class SList {
 
@@ -64,6 +67,7 @@ public class SList {
     public Player removeLast() {
         // This is the method which has most complexity
         // It's O(n) because we need to iterate through the list
+
         if (this.isEmpty()) {
             return null;
         }
@@ -82,6 +86,41 @@ public class SList {
         this.size--;
 
         return element;
+    }
+
+    public int getPosition(String playerName) {
+        // This another the method which has most complexity
+        // It's O(n) because we need to iterate through the list
+
+        SNode current = this.head;
+        int position = 1;
+
+        while (current != null) {
+            if (current.getElement().getName().equals(playerName))
+                return position;
+
+
+            current = current.next;
+            position++;
+        }
+
+        return -1;
+    }
+
+    public List<Player> getPlayers() {
+        // This another the method which has most complexity
+        // It's O(n) because we need to iterate through the list
+
+        List<Player> players = new ArrayList<>();
+
+        SNode current = this.head;
+
+        while (current != null) {
+            players.add(current.getElement());
+            current = current.next;
+        }
+
+        return players;
     }
 
     public Player getFirst() {
