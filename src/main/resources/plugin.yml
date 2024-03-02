@@ -1,0 +1,4 @@
+name: kQueue
+author: Alejandro12120
+version: ${project.version}
+main: com.kQueue.Main
