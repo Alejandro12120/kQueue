@@ -10,15 +10,11 @@ import java.util.List;
 public class ServerQueue {
 
     private String name;
-    private int players;
-    private int maxPlayers;
 
     private Queue queue;
 
-    public ServerQueue(String name, int players, int maxPlayers) {
+    public ServerQueue(String name) {
         this.name = name;
-        this.players = players;
-        this.maxPlayers = maxPlayers;
 
         this.queue = new Queue();
     }

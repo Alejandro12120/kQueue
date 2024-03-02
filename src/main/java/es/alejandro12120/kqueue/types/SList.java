@@ -25,13 +25,11 @@ public class SList {
 
     public void addFirst(Player element) {
         SNode newNode = new SNode(element);
-        if (this.isEmpty()) {
-            this.head = newNode;
+        if (this.isEmpty())
             this.tail = newNode;
-            return;
-        }
+        else
+            newNode.next = this.head;
 
-        newNode.next = this.head;
         this.head = newNode;
 
         this.size++;
@@ -39,22 +37,21 @@ public class SList {
 
     public void addLast(Player element) {
         SNode newNode = new SNode(element);
-        if (this.isEmpty()) {
+        if (this.isEmpty())
             this.head = newNode;
-            this.tail = newNode;
-            return;
-        }
+        else
+            this.tail.next = newNode;
 
-        this.tail.next = newNode;
+
         this.tail = newNode;
 
         this.size++;
     }
 
     public Player removeFirst() {
-        if (this.isEmpty()) {
+        if (this.isEmpty())
             return null;
-        }
+
 
         Player element = this.head.element;
         this.head = this.head.next;
