@@ -31,7 +31,6 @@ public class SList {
             newNode.next = this.head;
 
         this.head = newNode;
-
         this.size++;
     }
 
@@ -42,16 +41,12 @@ public class SList {
         else
             this.tail.next = newNode;
 
-
         this.tail = newNode;
-
         this.size++;
     }
 
     public Player removeFirst() {
-        if (this.isEmpty())
-            return null;
-
+        if (this.isEmpty()) return null;
 
         Player element = this.head.element;
         this.head = this.head.next;
@@ -65,16 +60,14 @@ public class SList {
         // This is the method which has most complexity
         // It's O(n) because we need to iterate through the list
 
-        if (this.isEmpty()) {
-            return null;
-        }
+        if (this.isEmpty()) return null;
 
         SNode current = this.head;
 
         // Iterate until the penultimate node
-        while (current.next != this.tail) {
+        while (current.next != this.tail)
             current = current.next;
-        }
+
 
         Player element = this.tail.getElement();
         this.tail = current;
@@ -95,7 +88,6 @@ public class SList {
         while (current != null) {
             if (current.getElement().getName().equals(playerName))
                 return position;
-
 
             current = current.next;
             position++;
@@ -121,17 +113,13 @@ public class SList {
     }
 
     public Player getFirst() {
-        if (this.isEmpty()) {
-            return null;
-        }
+        if (this.isEmpty()) return null;
 
         return this.head.getElement();
     }
 
     public Player getLast() {
-        if (this.isEmpty()) {
-            return null;
-        }
+        if (this.isEmpty()) return null;
 
         return this.tail.getElement();
     }
