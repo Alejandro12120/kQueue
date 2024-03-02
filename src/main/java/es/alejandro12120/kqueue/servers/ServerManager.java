@@ -22,6 +22,10 @@ public class ServerManager {
         this.servers.remove(server);
     }
 
+    public void removeServer(String name) {
+        this.servers.removeIf(server -> server.getName().equalsIgnoreCase(name));
+    }
+
     public ServerQueue getServer(String name) {
         return this.servers.stream().filter(server -> server.getName().equalsIgnoreCase(name)).findFirst().orElse(null);
     }
