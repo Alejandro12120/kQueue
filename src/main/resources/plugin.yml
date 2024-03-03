@@ -1,4 +1,4 @@
 name: kQueue
 author: Alejandro12120
-version: ${project.version}
+version: 1.0
 main: es.alejandro12120.kqueue.kQueue
